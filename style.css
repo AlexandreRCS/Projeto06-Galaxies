@@ -12,15 +12,31 @@
 }
 
 body{
+    display: grid;
+    justify-content: center;
+
     background-color: #121214;
 
-    padding: 73px 100px 114px;
+    padding: 7.3rem 10.0rem 11.4rem;
+}
+
+header h1{
+    font-size: 6.0rem;
+
+    color: #02799D;
+}
+
+header p{
+    margin: 0.8rem 0px 6.3rem;
 }
 
 main{
+    max-width:1100px ;
+
     display: grid;
-    grid-template-columns: repeat(3, 320px);
-    place-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    
     
 
     row-gap: 44px;
@@ -28,6 +44,7 @@ main{
 }
 
 .card{
+    max-width: 366px;
     background-color:#424245;
     border: 2px solid #323238;
     border-radius: 8px;
@@ -50,3 +67,37 @@ main{
     padding: 24px 32px 32px;
 
 }
+
+@media (max-width: 1150px) {
+
+    main{
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    
+}
+
+@media (max-width: 880px) {
+
+    body{
+        padding: 5rem 6.0rem 10rem ;
+    }
+
+    header h1{
+        font-size: clamp(4.0rem, 3.5rem, 6.0rem);
+    }
+
+    main{
+        grid-template-columns: 1fr;
+    }
+
+    .card{
+        max-width: 500px;
+        
+    }
+
+    .card img{
+        width: 100%;
+    }
+}
+
